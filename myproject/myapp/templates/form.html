@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>แบบฟอร์มบันทึกข้อมูลมนุษย์โลก</title>
+{% endblock %}
+
+{% block content %}
+    <h2 style="color:blue;" class="text-center">แบบฟอร์มบันทึกข้อมูลมนุษย์โลก</h2>
+    <form method="post" action="form">
+      {% csrf_token %}
+
+      <div class="form-group">
+        <label for="name">ชื่อ</label>
+          <input type="text" name="name" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="name">อายุ</label>
+          <input type="number" name="age" class="form-control">
+      </div>
+      <br>
+      <input type="submit" value="บันทึกข้อมูล" class="btn btn-success">
+
+    </form>
+    {% endblock %}

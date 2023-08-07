@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>แบบฟอร์มแก้ไขข้อมูลมนุษย์โลก</title>
+{% endblock %}
+
+{% block content %}
+    <h2 style="color:blue;" class="text-center">แบบฟอร์มแก้ไขข้อมูลมนุษย์โลก</h2>
+    <form method="post" action="">
+      {% csrf_token %}
+
+      <div class="form-group">
+        <label for="name">ชื่อ</label>
+          <input type="text" name="name" class="form-control" value="{{person.name}}">
+      </div>
+
+      <div class="form-group">
+        <label for="name">อายุ</label>
+          <input type="number" name="age" class="form-control" value="{{person.age}}">
+      </div>
+      <br>
+      <input type="submit" value="อัพเดทข้อมูล" class="btn btn-success">
+
+    </form>
+    
+    {% endblock %}
